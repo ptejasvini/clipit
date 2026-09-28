@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f6f7f2;
+    color: #17251f;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: radial-gradient(#245c4810 0.7px, transparent 0.7px);
+    background-size: 16px 16px;
+  }
+
+  button, input {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .upload-zone {
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  }
+
+  .upload-zone.is-dragging {
+    border-color: #245c48;
+    background-color: #e3f2e9;
+    transform: translateY(-2px);
+  }
+
+  .media-card {
+    animation: rise-in 420ms both;
+  }
+
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "clipit-web-assets",
+  "private": true,
+  "scripts": {
+    "css": "tailwindcss -i frontend/input.css -o cmd/api/web/app.css --minify",
+    "build": "npm run css && go build -o bin/clipit ./cmd/api",
+    "start": "npm run css && go run ./cmd/api"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
